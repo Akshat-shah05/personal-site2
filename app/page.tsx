@@ -5,16 +5,24 @@ import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 
 export default function Portfolio() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     const background = dark ? "#18181b" : "#f5f5dc";
     const foreground = dark ? "#e4e4e7" : "#27272a";
+    const accentWork = dark ? "#7adbb3" : "#2d6f5c";
+    const accentProjects = dark ? "#f1b164" : "#a1522b";
+    const accentWriting = dark ? "#9cb8ff" : "#365c9a";
+    const accentHighlight = dark ? "#7dd3fc" : "#2563eb";
     const root = document.documentElement;
 
     root.style.setProperty("--background", background);
     root.style.setProperty("--foreground", foreground);
+    root.style.setProperty("--accent-work", accentWork);
+    root.style.setProperty("--accent-projects", accentProjects);
+    root.style.setProperty("--accent-writing", accentWriting);
+    root.style.setProperty("--accent-highlight", accentHighlight);
   }, [dark]);
 
   const projects = [
@@ -30,7 +38,7 @@ export default function Portfolio() {
     },
     {
       name: "Workout Form Corrector",
-      desc: "experimental JIT compiler optimizations",
+      desc: "App that helps correct pushup, squat, benchpress, situp and pullup form",
       tech: "python, typescript, react, tensorflow",
     },
   ];
@@ -105,7 +113,16 @@ export default function Portfolio() {
         </button>
 
         <header className="mb-16">
-          <h1 className="mb-2 text-4xl font-mono">Akshat Shah</h1>
+          <h1
+            className="mb-2 text-4xl font-mono bg-clip-text text-transparent"
+            style={{
+              backgroundImage: dark
+                ? "linear-gradient(90deg, #f8fafc 0%, #b8c5ff 45%, #7adbb3 100%)"
+                : "linear-gradient(90deg, #0f172a 0%, #1d4ed8 45%, #15803d 100%)",
+            }}
+          >
+            Akshat Shah
+          </h1>
           <p
             className={`text-sm font-mono ${
               dark ? "text-zinc-400" : "text-zinc-600"
@@ -119,9 +136,12 @@ export default function Portfolio() {
               Deep-diving into the math behind ML and writing about it.
             </p>
             
-            <div className={`flex items-center gap-2 text-sm font-mono ${dark ? "text-zinc-400" : "text-zinc-500"}`}>
+            <div
+              className="flex items-center gap-2 text-sm font-mono"
+              style={{ color: "var(--accent-highlight)" }}
+            >
               <span>CS @ UWaterloo</span>
-              <span className="opacity-50">•</span>
+              <span className="opacity-80">•</span>
               <span>Databricks & AWS</span>
             </div>
 
@@ -154,13 +174,20 @@ export default function Portfolio() {
 
          <section className="mb-16">
           <section>
-            <h2
-              className={`mb-6 text-xl font-mono ${
-                dark ? "text-zinc-300" : "opacity-60"
-              }`}
-            >
-              ~/work
-            </h2>
+            <div className="mb-6 flex items-center gap-3">
+              <span
+                className="inline-block h-2 w-2 rounded-full"
+                style={{ backgroundColor: "var(--accent-work)" }}
+                aria-hidden="true"
+              />
+              <h2
+                className={`text-xl font-mono ${
+                  dark ? "text-zinc-300" : "opacity-60"
+                }`}
+              >
+                ~/work
+              </h2>
+            </div>
             <div className="space-y-6">
               {work.map((item) => (
                 <div key={`${item.role}-${item.company}`} className="font-mono">
@@ -169,9 +196,8 @@ export default function Portfolio() {
                       {item.company}
                     </span>
                     <span
-                      className={`text-xs ${
-                        dark ? "text-zinc-400" : "text-zinc-500"
-                      }`}
+                      className="text-xs"
+                      style={{ color: "var(--accent-work)" }}
                     >
                       {item.period}
                     </span>
@@ -197,13 +223,20 @@ export default function Portfolio() {
         </section>
 
         <section className="mb-16">
-          <h2
-            className={`mb-6 text-xl font-mono ${
-              dark ? "text-zinc-300" : "opacity-60"
-            }`}
-          >
-            ~/projects
-          </h2>
+          <div className="mb-6 flex items-center gap-3">
+            <span
+              className="inline-block h-2 w-2 rounded-full"
+              style={{ backgroundColor: "var(--accent-projects)" }}
+              aria-hidden="true"
+            />
+            <h2
+              className={`text-xl font-mono ${
+                dark ? "text-zinc-300" : "opacity-60"
+              }`}
+            >
+              ~/projects
+            </h2>
+          </div>
           <div className="space-y-6">
             {projects.map((project) => (
               <div key={project.name} className="font-mono">
@@ -212,9 +245,8 @@ export default function Portfolio() {
                     {project.name}
                   </span>
                   <span
-                    className={`text-xs ${
-                      dark ? "text-zinc-400" : "text-zinc-500"
-                    }`}
+                    className="text-xs"
+                    style={{ color: "var(--accent-projects)" }}
                   >
                     {project.tech}
                   </span>
@@ -232,13 +264,20 @@ export default function Portfolio() {
         </section>
         
         <section className="mb-6">
-          <h2
-            className={`mb-6 text-xl font-mono ${
-              dark ? "text-zinc-300" : "opacity-60"
-            }`}
-          >
-            ~/writing
-          </h2>
+          <div className="mb-6 flex items-center gap-3">
+            <span
+              className="inline-block h-2 w-2 rounded-full"
+              style={{ backgroundColor: "var(--accent-writing)" }}
+              aria-hidden="true"
+            />
+            <h2
+              className={`text-xl font-mono ${
+                dark ? "text-zinc-300" : "opacity-60"
+              }`}
+            >
+              ~/writing
+            </h2>
+          </div>
           <div className="space-y-6">
             {papers.map((paper) => (
               <div key={paper.title} className="font-mono">
@@ -247,9 +286,8 @@ export default function Portfolio() {
                     {paper.title}
                   </span>
                   <span
-                    className={`text-xs ${
-                      dark ? "text-zinc-400" : "text-zinc-500"
-                    }`}
+                    className="text-xs"
+                    style={{ color: "var(--accent-writing)" }}
                   >
                     {paper.venue}
                   </span>

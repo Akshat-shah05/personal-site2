@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-work: #2d6f5c;
+  --accent-projects: #a1522b;
+  --accent-writing: #365c9a;
+  --accent-highlight: #2563eb;
 }
 
 @theme inline {
@@ -16,6 +20,10 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent-work: #7adbb3;
+    --accent-projects: #f1b164;
+    --accent-writing: #9cb8ff;
+    --accent-highlight: #7dd3fc;
   }
 }
 
