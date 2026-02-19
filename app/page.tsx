@@ -68,6 +68,12 @@ export default function Portfolio() {
 
   const work = [
     {
+      role: "Co-Founder & CTO",
+      company: "Gradient",
+      period: "Jan 2026 - Present",
+      desc: "Version Control for ML model Training."
+    },
+    {
       role: "swe intern",
       company: "Databricks",
       period: "May 2026 - Aug 2026",
@@ -133,7 +139,7 @@ export default function Portfolio() {
           
           <div className={`mt-6 space-y-4 max-w-xl ${dark ? "text-zinc-300" : "text-zinc-700"}`}>
             <p className="text-sm leading-relaxed">
-              Deep-diving into the math behind ML and writing about it.
+              Building <Link href={"https://gradient-desc.com/"} className="underline">Gradient</Link>. Deep-diving into the math behind ML and writing about it.
             </p>
             
             <div
@@ -143,6 +149,8 @@ export default function Portfolio() {
               <span>CS @ UWaterloo</span>
               <span className="opacity-80">•</span>
               <span>Databricks & AWS</span>
+              <span className="opacity-80">•</span>
+              <span>Gradient</span>
             </div>
 
             <div className={`pt-2 border-t ${dark ? "border-zinc-800" : "border-zinc-200"}`}>
@@ -161,7 +169,7 @@ export default function Portfolio() {
               {showMore && (
                 <div className="mt-4 space-y-3 text-sm leading-relaxed">
                   <p>
-                    Hey 👋. Since you wanted to read more, I'll properly introduce myself. I'm Akshat – a third year CS student at the University of Waterloo. I spent 4 months at AWS DynamoDB revamping our network degradation detection tools. Will be joining Databricks to work on ML Infra in SF!
+                    Hey 👋. Since you wanted to read more, I'll properly introduce myself. I'm Akshat – a third year CS student at the University of Waterloo. I spent 4 months at AWS DynamoDB revamping our network degradation detection tools. Will be joining Databricks to work on ML Infra in SF! 
                   </p>
                   <p>
                     I consider myself to be extremely technical. I enjoy breaking extremely complex topics down into their smallest components until I know it inside out. I do not believe in software engineering with black boxes; I value knowing exactly how the technologies I use work.
