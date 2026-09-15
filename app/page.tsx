@@ -68,9 +68,15 @@ export default function Portfolio() {
 
   const work = [
     {
+      role: "qd intern",
+      company: "Citadel",
+      period: "June 2027 - Aug 2027",
+      desc: "Incoming @ Equity Quantitative Research."
+    },
+    {
       role: "Co-Founder & CTO",
       company: "Gradient",
-      period: "Jan 2026 - Present",
+      period: "Jan 2026 - Sept 2026",
       desc: "Version Control for ML model Training."
     },
     {
@@ -169,7 +175,7 @@ export default function Portfolio() {
               {showMore && (
                 <div className="mt-4 space-y-3 text-sm leading-relaxed">
                   <p>
-                    Hey 👋. Since you wanted to read more, I'll properly introduce myself. I'm Akshat – a third year CS student at the University of Waterloo. I spent 4 months at AWS DynamoDB revamping our network degradation detection tools. Will be joining Databricks to work on ML Infra in SF! 
+                    Hey 👋. Since you wanted to read more, I&apos;ll properly introduce myself. I&apos;m Akshat – a third year CS student at the University of Waterloo. I spent 4 months at AWS DynamoDB revamping our network degradation detection tools. Will be joining Databricks to work on ML Infra in SF! 
                   </p>
                   <p>
                     I consider myself to be extremely technical. I enjoy breaking extremely complex topics down into their smallest components until I know it inside out. I do not believe in software engineering with black boxes; I value knowing exactly how the technologies I use work.
